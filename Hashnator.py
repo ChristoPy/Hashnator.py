@@ -124,13 +124,13 @@ class Hashnator ():
 
 if __name__ == "__main__":
 	# Level one of hash with 16 characters
-	Test = Hashnator.Hashnator ()
+	Test = Hashnator ()
 	print Test.Hash
 
 	# Level two of hash with 24 characters
-	Test = Hashnator.Hashnator (HashLevel = 2, HashSize = 24)
+	Test = Hashnator (HashLevel = 2, HashSize = 24)
 	print Test.Hash
 
 	# Level tree of hash with 32 characters
-	Test = Hashnator.Hashnator (HashLevel = 3, HashSize = 32)
+	Test = Hashnator (HashLevel = 3, HashSize = 32)
 	print Test.Hash
