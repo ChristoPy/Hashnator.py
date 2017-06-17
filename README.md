@@ -5,6 +5,7 @@ A very basic Python hash system with 3 levels of hashing
 
 To use is very simple:
 
+# Level one of hash with 16 characters
 Test = Hashnator.Hashnator ()
 print Test.Hash
 
