@@ -18,7 +18,7 @@ limitations under the License.
 import random, time
 
 
-class Hashinator ():
+class Hashnator ():
 	def __init__ (self, HashLevel = 1, HashSize = 16):
 		if HashLevel < 1 or HashLevel > 3:
 			print "HashLevel must be 1, 2 or 3."
