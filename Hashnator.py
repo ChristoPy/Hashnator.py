@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-
 import random, time
+
 
 
 class Hashnator ():
@@ -28,7 +28,6 @@ class Hashnator ():
 
 		self.HashLevel = HashLevel
 		self.Hash = ""
-		self.GenHash ()
 
 	def GenHash (self):
 		Final = []
@@ -40,19 +39,23 @@ class Hashnator ():
 			Count += 1
 
 			if self.HashLevel == 1:
-				time.sleep(0.1)
 				random.shuffle(Final)
+				time.sleep(0.01)
 
 			elif self.HashLevel == 2:
-				random.shuffle(Final)
-				time.sleep(0.3)
-				random.shuffle(Final)
-
-			elif self.HashLevel == 3:
 				random.shuffle(Final)
 				time.sleep(0.5)
 				random.shuffle(Final)
 				Final.reverse()
+
+			elif self.HashLevel == 3:
+				Final.reverse()
+				random.shuffle(Final)
+				time.sleep(0.1)
+				Final.reverse()
+				random.shuffle(Final)
+				time.sleep(0.3)
+				random.shuffle(Final)
 
 		random.shuffle(Final)
 
@@ -63,19 +66,23 @@ class Hashnator ():
 			Count += 1
 
 			if self.HashLevel == 1:
-				time.sleep(0.1)
 				random.shuffle(Final)
+				time.sleep(0.01)
 
 			elif self.HashLevel == 2:
-				random.shuffle(Final)
-				time.sleep(0.3)
-				random.shuffle(Final)
-
-			elif self.HashLevel == 3:
 				random.shuffle(Final)
 				time.sleep(0.5)
 				random.shuffle(Final)
 				Final.reverse()
+
+			elif self.HashLevel == 3:
+				Final.reverse()
+				random.shuffle(Final)
+				time.sleep(0.1)
+				Final.reverse()
+				random.shuffle(Final)
+				time.sleep(0.3)
+				random.shuffle(Final)
 
 		random.shuffle(Final)
 
@@ -91,6 +98,8 @@ class Hashnator ():
 			Final += Item
 
 		self.Hash = Final[:self.HashSize]
+
+		return self.Hash
 
 	def RandomNumber (self):
 		Seed = int(str(time.time()).split(".")[-1])
@@ -123,14 +132,14 @@ class Hashnator ():
 
 
 if __name__ == "__main__":
-	# Level 1 of hash with 16 characters
-	Test = Hashnator ()
-	print Test.Hash
+	# Level 1 of hash with 32 characters
+	Test = Hashnator (HashSize = 32)
+	print Test.GenHash ()
 
-	# Level 2 of hash with 24 characters
-	Test = Hashnator (HashLevel = 2, HashSize = 24)
-	print Test.Hash
+	# Level 2 of hash with 32 characters
+	Test = Hashnator (HashLevel = 2, HashSize = 32)
+	print Test.GenHash ()
 
 	# Level 3 of hash with 32 characters
 	Test = Hashnator (HashLevel = 3, HashSize = 32)
-	print Test.Hash
+	print Test.GenHash ()
